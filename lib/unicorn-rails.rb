@@ -15,7 +15,7 @@ module Rack
 
           if options[:debugger]
             unicorn_options[:worker_processes] = 1
-            unicorn_options[:timeout] = 120
+            unicorn_options[:timeout] = 3600
           end
 
           ::Unicorn::Launcher.daemonize!(unicorn_options) if options[:daemonize]
