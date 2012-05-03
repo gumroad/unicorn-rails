@@ -12,6 +12,7 @@ module Rack
           unicorn_options = {}
           unicorn_options[:listeners] = ["#{options[:Host]}:#{options[:Port]}"]
           unicorn_options[:worker_processes] = 3
+          unicorn_options[:timeout] = 3600
 
           if options[:debugger]
             unicorn_options[:worker_processes] = 1
